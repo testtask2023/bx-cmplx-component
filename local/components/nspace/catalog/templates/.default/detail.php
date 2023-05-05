@@ -1,5 +1,8 @@
 <?
-if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
+
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
+    die();
+}
 
 /**
  * @global CMain $APPLICATION
@@ -100,7 +103,7 @@ $APPLICATION->IncludeComponent(
         "MESSAGE_404" => "",
         "COMPATIBLE_MODE" => "Y",
         "USE_ELEMENT_COUNTER" => "Y",
-        "DISABLE_INIT_JS_IN_COMPONENT" => "N"
+        "DISABLE_INIT_JS_IN_COMPONENT" => "N",
     ],
     false
 );

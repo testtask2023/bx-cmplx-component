@@ -1,5 +1,8 @@
 <?php
-if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
+
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
+    die();
+}
 
 use \Bitrix\Main\Context;
 
@@ -13,7 +16,7 @@ class Catalog extends \CBitrixComponent
     {
         $this->defaultUrlTemplates404 = [
             'list' => '',
-            'detail' => '#ELEMENT_CODE#/'
+            'detail' => '#ELEMENT_CODE#/',
         ];
         $this->componentVariables = [
             'ELEMENT_ID',
@@ -25,8 +28,7 @@ class Catalog extends \CBitrixComponent
     {
         $urlTemplates = [];
 
-        if ($this->arParams['SEF_MODE'] === 'Y')
-        {
+        if ($this->arParams['SEF_MODE'] === 'Y') {
             $variables = [];
 
             $urlTemplates = \CComponentEngine::MakeComponentUrlTemplates(
@@ -45,24 +47,19 @@ class Catalog extends \CBitrixComponent
                 $variables
             );
 
-            if (!$this->templatePage)
-            {
-                if ($this->arParams['SET_404'] === 'Y')
-                {
+            if (!$this->templatePage) {
+                if ($this->arParams['SET_404'] === 'Y') {
                     $folder404 = str_replace('\\', '/', $this->arParams['SEF_FOLDER']);
 
-                    if ($folder404 != '/')
-                    {
+                    if ($folder404 != '/') {
                         $folder404 = '/'.trim($folder404, "/ \t\n\r\0\x0B")."/";
                     }
 
-                    if (substr($folder404, -1) == '/')
-                    {
+                    if (substr($folder404, -1) == '/') {
                         $folder404 .= 'index.php';
                     }
 
-                    if ($folder404 != Context::getCurrent()->getRequest()->getRequestedPage())
-                    {
+                    if ($folder404 != Context::getCurrent()->getRequest()->getRequestedPage()) {
                         $this->return404();
                     }
                 }
@@ -77,9 +74,7 @@ class Catalog extends \CBitrixComponent
                 $variableAliases,
                 $variables
             );
-        }
-        else
-        {
+        } else {
             $this->templatePage = $this->defaultPage;
         }
 
@@ -105,8 +100,7 @@ class Catalog extends \CBitrixComponent
 
     public function return404($notifier = false)
     {
-        if (!defined('ERROR_404'))
-        {
+        if (!defined('ERROR_404')) {
             define('ERROR_404', 'Y');
         }
 

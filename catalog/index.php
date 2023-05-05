@@ -1,5 +1,6 @@
 <?php
-require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
+
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 /**
  * @global CMain $APPLICATION
  */
@@ -13,7 +14,7 @@ $APPLICATION->IncludeComponent(
         "IBLOCK_TYPE" => "CATALOG",
         "SECTION_CODE" => "DEFAULT_SECTION_CODE",
 
-        "COUNT" => 2,
+        "COUNT" => 20,
 
         "ELEMENT_SORT_FIELD" => "sort",
         "ELEMENT_SORT_FIELD2" => "id",
@@ -29,7 +30,8 @@ $APPLICATION->IncludeComponent(
         "SEF_URL_TEMPLATES" => [
             "list" => "",
             "detail" => "#ELEMENT_CODE#/",
-        ]
+        ],
     ]
 );
-?>
+
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");
