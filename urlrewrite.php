@@ -1,10 +1,10 @@
 <?php
 $arUrlRewrite = [
     [
-        'CONDITION' => '#^/test/#',
+        'CONDITION' => '#^/catalog/#',
         'RULE' => '',
         'ID' => 'nspace:catalog',
-        'PATH' => '/test/index.php',
+        'PATH' => '/catalog/index.php',
         'SORT' => 100,
     ],
 ];
