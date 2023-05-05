@@ -25,7 +25,7 @@ $APPLICATION->IncludeComponent(
 
         "SET_404" => "Y",
         "SEF_MODE" => "Y",
-        "SEF_FOLDER" => "/test/",
+        "SEF_FOLDER" => "/catalog/",
         "SEF_URL_TEMPLATES" => [
             "list" => "",
             "detail" => "#ELEMENT_CODE#/",
